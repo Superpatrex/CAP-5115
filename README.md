@@ -9,9 +9,13 @@ This repository showcases my projects developed during the Virtual Reality Engin
 ## 📚 Projects
 
 1. **Project 1**: 
-   - Description: A simple forest scene with accompanying noises
-   - Technologies Used:
-   - Credits: *Simplistic Low Poly Nature* (Acorn Bringer), *Low-Poly Simple Nature Pack* (JustCreate), *Raccoon Rigged Low Poly* (Heltonlay), and *LowPoly animals* Madtrollstudio
+   - **Description**: A simple forest scene with accompanying noises.
+   - **Technologies Used**: Unity3D, C#, VR Development SDKs.
+   - **Credits**: 
+     - *Simplistic Low Poly Nature* (Acorn Bringer)
+     - *Low-Poly Simple Nature Pack* (JustCreate)
+     - *Raccoon Rigged Low Poly* (Heltonlay)
+     - *LowPoly animals* (Madtrollstudio)
 
 ## 🛠️ Technologies Used
 
@@ -26,11 +30,11 @@ To set up and run any of the projects in this repository:
 1. Clone this repository to your local machine using `git clone`.
 2. Open the project in Unity3D.
 3. Ensure you have the necessary VR development SDKs installed.
-4. Configure the correct render pipelines for the rendering of the project
+4. Configure the correct render pipelines for the rendering of the project.
 
 ## 💡 Usage
 
-Usage for these examples are only for educational use only, plagarism and other such academic offenses are not condoned for this repository
+Usage for these examples is only for educational use. Plagiarism and other academic offenses are not condoned for this repository.
 
 ## 🤝 Contributing
 
