@@ -8,12 +8,16 @@ public class CameraController : MonoBehaviour
     public Camera SpectatorCamera;
     private Camera CurrenCamera;
 
-    private float oRotation = -90;
-    private float fRotation = -90;
+    public Transform target; // The object around which the camera will rotate
+    public float rotationSpeed = 50f;
+
+    private float distance = 3.5f; // Distance from the target
+    private float currentAngle = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        EnvironmentCamera.enabled = false;
+        EnvironmentCamera.enabled = true;
         CurrenCamera = SpectatorCamera;
         SpectatorCamera.enabled = true;
     }
@@ -38,20 +42,19 @@ public class CameraController : MonoBehaviour
         {
            if (UnityEngine.Input.GetKey(KeyCode.LeftArrow))
             {
-                fRotation += 45f * (Time.deltaTime);
-                if (fRotation > 0)
-                    fRotation = 0;
+                currentAngle += rotationSpeed * Time.deltaTime;
             }
 
             if (UnityEngine.Input.GetKey(KeyCode.RightArrow))
             {
-                fRotation -= 45f * (Time.deltaTime);
-                if (fRotation < -180)
-                    fRotation = -180;
+               currentAngle -= rotationSpeed * Time.deltaTime;
             }
+            // Calculate the camera's position based on the current angle
+            Vector3 offset = Quaternion.Euler(0, currentAngle, 0) * new Vector3(0, 0, -distance);
+            transform.position = target.position + offset;
 
-            EnvironmentCamera.transform.position = Quaternion.Euler(0, fRotation, 0) * new Vector3(0, 1.5f, -3.5f);
-            EnvironmentCamera.transform.rotation = Quaternion.LookRotation(SpectatorCamera.transform.position - EnvironmentCamera.transform.position + new Vector3(-2, 0, 0));
+            // Make the camera look at the target
+            transform.LookAt(target);
         }
     }
 }
