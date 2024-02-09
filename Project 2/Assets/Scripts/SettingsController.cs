@@ -6,6 +6,7 @@ public class SettingsController : MonoBehaviour
 {
     public static SettingsController ThisInstance;
     private static bool MusicOn = true;
+    
     // Start is called before the first frame update
     void Start()
     {
